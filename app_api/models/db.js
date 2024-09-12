@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
-const dbURI = "mongodb://localhost/Loc8r";
+
+//const dbURI = "mongodb://localhost/Loc8r";
+const dbURI = "mongodb+srv://alejandro:aryan1429@cluster0.jwcmfga.mongodb.net/Loc8tr"
+
 mongoose.connect(dbURI, { useNewUrlParser: true });
 mongoose.connection.on("connected", () => {
   console.log(`Mongoose connected to ${dbURI}`);
@@ -34,3 +37,5 @@ process.on("SIGTERM", () => {
     process.exit(0);
   });
 });
+
+require('./locations.js')
